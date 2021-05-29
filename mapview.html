@@ -5,8 +5,28 @@
    <title>My webpage</title>
 
  </head>
+ <style>
+   div#btn{
+     width:50px;
+     height:30px;
+     background-color: lightgray;
+   }
+   div#btn:hover{
+     background-color: red;
+     color:white;
+   }
+   div#map{
+    width : 60%;
+    height: 100vh;
+   }
+ </style>
  <body>
-   <div id="map" style="width : 60%; height: 100vh;"></div>
+   <div id="map"></div>
+   <div id="btn" onclick="location.href='mainpage.html'">
+     이전
+   </div>
+
+   </div>
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKNME0Uhqx2e6qwND1fuR3M40h_6YCJsI&callback=initialize"
 
    ></script>
@@ -37,7 +57,7 @@
    // locationSuccess
    function locationError(error){
        var errorTypes = {
-           0 : "무슨 에러냥~",
+           0 : "?",
            1 : "허용 안눌렀음",
            2 : "위치가 안잡힘",
            3 : "응답시간 지남"

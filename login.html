@@ -3,26 +3,121 @@
  <head>
    <title>My webpage</title>
  </head>
+ <style>
+   body{
+     width = 100%;
+   }
+   form{
+     width : 800px;
+     height : 600px;
+     margin : 0px auto;
+
+   }
+   input{
+     margin-top : 40px;
+     margin-left : 150px;
+     height : 25px;
+
+   }
+   input[type="radio"]{
+     margin-top : 40px;
+     margin-left: 150px;
+     height : 25px;
+   }
+   div#body{
+     position: relative;
+     border: 1px solid lightgray;
+     width : 900px;
+     height : 650px;
+     margin : 0px auto;
+   }
+   div#label{
+     position: absolute;
+     top : 20px;
+     width : 200px;
+     height: 550px;
+     float : left;
+     background-color: lightgray;
+   }
+   div#label p{
+     margin-left : 20px;
+     margin-top : 50px;
+
+   }
+   div#inputval{
+     position: absolute;
+     top: 20px;
+     left : 200px;
+     width : 600px;
+     height : 600px;
+     float : right;
+   }
+   div#button1 , div#button2{
+     background-color: #D8D8D8;
+     width : 50px;
+     height : 25px;
+     text-align: center;
+     float : left;
+     position: absolute;
+     border-radius: 10px;
+   }
+  div#button1{
+    left : 700px;
+  }
+  div#button2{
+    left : 760px;
+  }
+  div#button1:hover, div#button2:hover{
+    background-color: red;
+    color: white;
+  }
+
+
+  span{
+    color : red;
+  }
+
+ </style>
  <body>
-   <div class="">
+   <div id="body">
      <form class="" action="index.html" method="post">
-       <label for="">아이디 : </label>
-       <input type="text" name="" value=""> <br>
-       <label for="">비밀번호 : </label>
-       <input type="text" name="" value=""> <br>
-       <label for="">비밀번호 재확인 : </label>
-       <input type="text" name="" value=""> <br>
-       <label for="">이름 : </label>
-       <input type="text" name="" value=""> <br>
-       <label for="">생년월일 : </label>
-       <input type="text" name="" value=""> <br>
-       <label for="">성별 : </label>
-       <input type="text" name="" value=""> <br>
-       <label for="">휴대전화 : </label>
-       <input type="text" name="" value=""> <br>
-       <input type="button" name="" value="가입하기"> <br>
+       <div id="label">
+         <p>아이디 <span>*</span> </p>
+         <p>비밀번호 <span>*</span></p>
+         <p>비밀번호 확인 <span>*</span></p>
+         <p>이메일 주소</p>
+         <p>이름<span>*</span></p>
+         <p>성별 <span>*</span></p>
+         <p>닉네임<span>*</span></p>
+
+       </div>
+
+       <div id="inputval">
+         <input type="text" name="" value=""><br>
+         <input type="password" name="" value=""><br>
+         <input type="password" name="" value=""><br>
+         <input type="email" name="" value=""><br>
+         <input type="text" name="" value=""><br>
+         <input type="radio" name="gender" value="" style=""><label>남성</label>
+         <input type="radio" name="gender" value=""><label>여자</label><br>
+         <input type="text" name="" value="">
+
+       </div>
 
      </form>
+     <div id="button1">
+       <label>등록</label>
+     </div>
+
+     <div id="button2" onclick="location.href='mainpage.html'">
+       <label>취소</label>
+     </div>
    </div>
  </body>
+ <script>
+
+
+
+
+ </script>
 </html>

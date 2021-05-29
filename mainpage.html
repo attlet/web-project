@@ -21,32 +21,58 @@
        height : 35px;
        text-align : right;
      }
-     div#div1{
+     div#head{
        width : 100%;
-       height : 60px;
+       height : 80px;
        text-align : center;
      }
-     div#myCarousel{
+     div#mainimage{
+       height : 400px;
+     }
+     div#mainimage img{
+       width : 1200px;
        height : 400px;
      }
 
-     div#carousel_guide{
-       background-color : rgba(0, 0, 0, 0.6);
-       position: absolute;
-       bottom : 0px;
-       width : 100%;
-       height:40px;
-     }
      div#body{
-       width : 1000px;
+       width : 1400px;
        height : 1500px;
-       margin : 0px auto;
        border : 1px solid black;
+       margin : 0px auto;
+       position: relative;
      }
 
      div#notice{
-       margin : 20px 20px;
        width : 400px;
+       height : 300px;
+       position: absolute;
+       border:1px solid black;
+       top : 20px;
+       left : 200px;
+     }
+     div#div1{
+       border :1px solid black;
+       width : 400px;
+       height: 300px;
+       position: absolute;
+       top : 20px;
+       left : 800px;
+     }
+     div#div2{
+       border :1px solid black;
+       width : 400px;
+       height: 300px;
+       position: absolute;
+       top : 360px;
+       left : 200px;
+     }
+     div#div3{
+       border :1px solid black;
+       width : 400px;
+       height: 300px;
+       position: absolute;
+       top : 360px;
+       left : 800px;
      }
 
      div#top a{
@@ -68,9 +94,7 @@
        border: 1px solid lightgray;
        margin-left : 300px;
      }
-     span{
-       color : lightgray;
-     }
+
      ul{
        padding : 30px 0px;
 
@@ -91,7 +115,7 @@
  <body>
   <div id="top">
     <a href="#">로그인 <span>|</span></a>
-    <a href="#">회원가입 <span>|</span></a>
+    <a href="login.html">회원가입 <span>|</span></a>
     <a href="#">아이디 찾기 <span>|</span></a>
     <a href="#">비밀번호 찾기</a>
   </div>
@@ -100,41 +124,14 @@
     <ul>
       <li><a href="#">공지사항</a></li>
       <li><a href="#">소통게시판</a></li>
-      <li><a href="#">복지 시설 위치</a></li>
-      <li><a href="#">관련 정책</a></li>
-      <li><a href="#">후원</a></li>
+      <li><a href="mapview.html">복지 시설 위치</a></li>
+      <li><a href="MedicalTreatment.html">관련 정책</a></li>
+      <li><a href="First.html">후원</a></li>
     </ul>
   </div>
 
-  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!--이미지 추가해야함-->
-    <div class="carousel-inner">
-      <div class="item active">
-       <img src="" alt="none">
-      </div>
-      <div class="item">
-        <img src="" alt="none1">
-      </div>
-      <div class="item">
-        <img src="" alt="none2">
-      </div>
-    </div>
-
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+  <div id="mainimage" class="carousel slide text-center" data-ride="carousel">
+    <img src="image.png" alt="">
 
   </div>
 
@@ -143,6 +140,17 @@
       <h4 style="display : inline;">공지사항</h4>
       <a href="#"><span class="glyphicon glyphicon-plus"></span></a>
       <hr>
+
+    </div>
+    <div id="div1">
+      content
+    </div>
+
+    <div id="div2">
+      content2
+    </div>
+
+    <div id="div3">
 
     </div>
 
