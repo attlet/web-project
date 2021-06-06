@@ -10,6 +10,11 @@
    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js"></script>
+   <script type = "text/javascript">
+     google.charts.load('current', {packages: ['corechart']});
+   </script>
+
    <style>
      body{
        width : 100%;
@@ -27,21 +32,83 @@
        text-align : center;
      }
      div#mainimage{
+       position : relative;
+       top : 0;
+       left : 0;
        height : 400px;
+       background-color: #FA8258;
+     }
+
+     div#main_carousel{
+       position: absolute;
+       top : 70px;
+       left : 200px;
+       background-color: white;
+       width : 600px;
+       height : 300px;
+       border-radius: 25px;
      }
      div#mainimage img{
-       width : 1200px;
+       position:absolute;
+       top:10px;
+       left : 900px;
+     }
+
+     div#main1{
+       height : 400px;
+       background-color: #E34464;
+       position:relative;
+     }
+     div#main1 img{
+       width : 500px;
+       height : 300px;
+       position : absolute;
+       top : 30px;
+       left : 100px;
+     }
+     div#main1_1{
+       background-color: white;
+       width : 500px;
+       height : 300px;
+       border-radius: 25px;
+       position:absolute;
+       top:50px;
+       left : 200px;
+     }
+     div#main1_2{
+       position:absolute;
+       top:50px;
+       left:1000px;
+       background-color: white;
+       width : 500px;
+       height: 300px;
+       border-radius: 25px;
+       padding : 40px 40px;
+     }
+     div#main2{
+       position: relative;
+       background-color: #E3B254;
        height : 400px;
      }
-
-     div#body{
-       width : 1400px;
-       height : 1500px;
-       border : 1px solid black;
-       margin : 0px auto;
-       position: relative;
+     div#main2 img{
+       border-radius: 25px;
+       width : 300px;
+       height : 300px;
+       position : absolute;
+       top : 30px;
+       left : 150px;
      }
+     div#foot{
+       background-color: gray;
+       height : 150px;
+       text-align: center;
+       padding-top : 40px;
+     }
+     div#foot img{
+       width : 25px;
+       height : 25px;
 
+     }
      div#notice{
        width : 400px;
        height : 300px;
@@ -50,37 +117,8 @@
        top : 20px;
        left : 200px;
      }
-     div#div1{
-       border :1px solid black;
-       width : 400px;
-       height: 300px;
-       position: absolute;
-       top : 20px;
-       left : 800px;
-     }
-     div#div2{
-       border :1px solid black;
-       width : 400px;
-       height: 300px;
-       position: absolute;
-       top : 360px;
-       left : 200px;
-     }
-     div#div3{
-       border :1px solid black;
-       width : 400px;
-       height: 300px;
-       position: absolute;
-       top : 360px;
-       left : 800px;
-     }
 
      div#top a{
-       color : black;
-     }
-
-     div#head a{
-       font-size : 1.2em;
        color : black;
      }
 
@@ -96,12 +134,12 @@
      }
 
      ul{
-       padding : 30px 0px;
+       padding : 0px 0px;
 
      }
      ul li{
        display : inline;
-       padding : 0px 50px;
+       padding : 0px 30px;
 
      }
      hr{
@@ -109,53 +147,157 @@
        margin-left : 0px;
        border : 1px solid black;
      }
+     .carousel-control.right, .carousel-control.left {
+       background-image: none;
+       color: #f4511e;
+     }
+
+     .carousel-indicators li {
+       border-color: #f4511e;
+     }
+
+     .carousel-indicators li.active {
+       background-color: #f4511e;
+     }
+     .navbar {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                border: 0;
+                border-radius: 0;
+                margin-bottom: 0;
+                font-size: 15px;
+                letter-spacing: 5px;
+            }
+            .navbar-nav  li a:hover {
+                color: #1abc9c;
+            }
 
    </style>
+   <script scr="test.js">
+
+   </script>
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+ <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
  </head>
  <body>
-  <div id="top">
-    <a href="#">로그인 <span>|</span></a>
-    <a href="login.html">회원가입 <span>|</span></a>
-    <a href="#">아이디 찾기 <span>|</span></a>
-    <a href="#">비밀번호 찾기</a>
-  </div>
+
 
   <div id="head">
-    <ul>
-      <li><a href="#">공지사항</a></li>
-      <li><a href="#">소통게시판</a></li>
-      <li><a href="mapview.html">복지 시설 위치</a></li>
-      <li><a href="MedicalTreatment.html">관련 정책</a></li>
-      <li><a href="First.html">후원</a></li>
-    </ul>
-  </div>
-
-  <div id="mainimage" class="carousel slide text-center" data-ride="carousel">
-    <img src="image.png" alt="">
-
-  </div>
-
-  <div id="body">
-    <div id="notice">
-      <h4 style="display : inline;">공지사항</h4>
-      <a href="#"><span class="glyphicon glyphicon-plus"></span></a>
-      <hr>
-
-    </div>
-    <div id="div1">
-      content
-    </div>
-
-    <div id="div2">
-      content2
-    </div>
-
-    <div id="div3">
-
-    </div>
-
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+          <a class="navbar-brand" href="#">Me</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">공지사항</a></li>
+            <li><a href="communication.html">소통게시판</a></li>
+            <li><a href="mapview.html">복지 시설 위치</a></li>
+            <li><a href="MedicalTreatment.html">관련 정책</a></li>
+            <li><a href="First.html">후원</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
   </div>
+
+  <div id="mainimage">
+    <div id="main_carousel" class="carousel slide text-center" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#main_carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#main_carousel" data-slide-to="1"></li>
+        <li data-target="#main_carousel" data-slide-to="2"></li>
+      </ol>
+
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+        <h4>"This company is the best. I am so happy with the result!"</span></h4>
+        </div>
+        <div class="item">
+          <h4>"One word... WOW!!" John Doe, Salesman, Rep Inc</span></h4>
+        </div>
+        <div class="item">
+          <h4>"Could I... BE any more happy with this company?"</span></h4>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#main_carousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#main_carousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <img src="mainimage1.png" alt="none">
+  </div>
+
+  <div id="main1">
+    <img src="mainimage2-removebg-preview.png" alt="">
+    <div id="main1_2">
+
+
+    </div>
+
+  </div>
+
+  <div id="main2">
+    <img src="preimage1.jpg" alt="">
+
+
+  </div>
+
+  <div id="foot">
+    <p>제작자: 고승현 구교성 신윤성</p>
+    <p>주소 : 청주시  &nbsp&nbsp&nbsp 연락처: 010-1111-2222</p>
+    <img src="페이스북.png">
+    <img src="인스타그램.png" alt="">
+  </div>
+
+
+  <script language = "JavaScript">
+     function drawChart() {
+        // Define the chart to be drawn.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Browser');
+        data.addColumn('number', 'Percentage');
+        data.addRows([
+           ['Firefox', 45.0],
+           ['IE', 26.8],
+           ['Chrome', 12.8],
+           ['Safari', 8.5],
+           ['Opera', 6.2],
+           ['Others', 0.7]
+        ]);
+
+        // Set chart options
+        var options = {
+           'title':'Browser market shares at a specific website, 2014',
+           'width':450,
+           'height':250
+        };
+
+        // Instantiate and draw the chart.
+        var chart = new google.visualization.PieChart(document.getElementById('main1_2'));
+        chart.draw(data, options);
+     }
+     google.charts.setOnLoadCallback(drawChart);
+  </script>
+
+
+
 
  </body>
 </html>
