@@ -4,7 +4,6 @@
    <title>My webpage</title>
 
    <meta charset="utf-8">
-   <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -20,17 +19,7 @@
        width : 100%;
        height : 100%;
      }
-     div#top{
-       background-color : #F2F2F2;
-       width : 100%;
-       height : 35px;
-       text-align : right;
-     }
-     div#head{
-       width : 100%;
-       height : 80px;
-       text-align : center;
-     }
+
      div#mainimage{
        position : relative;
        top : 0;
@@ -64,16 +53,11 @@
        height : 300px;
        position : absolute;
        top : 30px;
-       left : 100px;
+       left : 500px;
      }
-     div#main1_1{
-       background-color: white;
-       width : 500px;
-       height : 300px;
-       border-radius: 25px;
-       position:absolute;
-       top:50px;
-       left : 200px;
+     div#main1 p{
+       padding-top : 150px;
+       padding-left : 100px;
      }
      div#main1_2{
        position:absolute;
@@ -90,13 +74,15 @@
        background-color: #E3B254;
        height : 400px;
      }
+     div#main2 p{
+       padding-top : 5px;
+       padding-left : 100px;
+     }
      div#main2 img{
        border-radius: 25px;
        width : 300px;
        height : 300px;
        position : absolute;
-       top : 30px;
-       left : 150px;
      }
      div#foot{
        background-color: gray;
@@ -122,26 +108,12 @@
        color : black;
      }
 
-     div#head a:hover{
-       color : red;
-       text-decoration : none;
-       font-weight : bold;
-     }
      div#notice span{
        color : #BDBDBD;
        border: 1px solid lightgray;
        margin-left : 300px;
      }
 
-     ul{
-       padding : 0px 0px;
-
-     }
-     ul li{
-       display : inline;
-       padding : 0px 30px;
-
-     }
      hr{
        width : 400px;
        margin-left : 0px;
@@ -159,23 +131,14 @@
      .carousel-indicators li.active {
        background-color: #f4511e;
      }
-     .navbar {
-                padding-top: 15px;
-                padding-bottom: 15px;
-                border: 0;
-                border-radius: 0;
-                margin-bottom: 0;
-                font-size: 15px;
-                letter-spacing: 5px;
-            }
-            .navbar-nav  li a:hover {
-                color: #1abc9c;
-            }
+
+
 
    </style>
    <script scr="test.js">
 
    </script>
+ <link text="text/css" rel="stylesheet" href="shared_design.css">
  <link rel="preconnect" href="https://fonts.gstatic.com">
  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
  </head>
@@ -195,8 +158,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">공지사항</a></li>
-            <li><a href="communication.html">소통게시판</a></li>
+            <li><a href="communication.html">소통 및 거래게시판</a></li>
             <li><a href="mapview.html">복지 시설 위치</a></li>
             <li><a href="MedicalTreatment.html">관련 정책</a></li>
             <li><a href="First.html">후원</a></li>
@@ -245,6 +207,7 @@
   </div>
 
   <div id="main1">
+    <p style="font-family: 'Nanum Pen Script', cursive; font-size : 4.0em;">장애인을 위한 판매 상품</p>
     <img src="mainimage2-removebg-preview.png" alt="">
     <div id="main1_2">
 
@@ -254,7 +217,8 @@
   </div>
 
   <div id="main2">
-    <img src="preimage1.jpg" alt="">
+    <p style="font-family: 'Nanum Pen Script', cursive; font-size : 4.0em;">장애인을 위한 판매 상품</p>
+    <img src="preimage1.jpg" style="top : 30px; left : 800px;">
 
 
   </div>
