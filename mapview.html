@@ -3,30 +3,78 @@
  <head>
    <meta charset="utf-8">
    <title>My webpage</title>
-
+   <link type="text/css" rel="stylesheet" href="shared_design.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
  </head>
  <style>
-   div#btn{
-     width:50px;
-     height:30px;
-     background-color: lightgray;
-   }
-   div#btn:hover{
-     background-color: red;
-     color:white;
+   body{
+     width : 100%;
+     height : 100%;
    }
    div#map{
-    width : 60%;
-    height: 100vh;
+    width : 90%;
+    height: 60vh;
+    margin-top : 100px;
+   }
+   div#leftside{
+     float : left;
+     width : 55%;
+     height : 800px;
+   }
+
+   div#rightside{
+     float : right;
+     width : 45%;
+     height : 800px;
+   }
+   div#foot{
+     clear : both;
    }
  </style>
  <body>
-   <div id="map"></div>
-   <div id="btn" onclick="location.href='mainpage.html'">
-     이전
-   </div>
+   <div id="head">
+     <nav class="navbar navbar-default">
+       <div class="container">
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                     </button>
+           <a class="navbar-brand" href="#">Me</a>
+         </div>
+         <div class="collapse navbar-collapse" id="myNavbar">
+           <ul class="nav navbar-nav navbar-right">
+             <li><a href="communication.html">소통 및 거래게시판</a></li>
+             <li><a href="mapview.html">복지 시설 위치</a></li>
+             <li><a href="MedicalTreatment.html">관련 정책</a></li>
+             <li><a href="First.html">후원</a></li>
+           </ul>
+         </div>
+       </div>
+     </nav>
 
    </div>
+   <div id="leftside">
+
+   </div>
+   <div id="rightside">
+     <div id="map"></div>
+   </div>
+
+
+   <div id="foot">
+    <p>제작자: 고승현 구교성 신윤성</p>
+    <p>주소 : 청주시  &nbsp&nbsp&nbsp 연락처: 010-1111-2222</p>
+    <img src="페이스북.png">
+    <img src="인스타그램.png" alt="">
+  </div>
+
+
+
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKNME0Uhqx2e6qwND1fuR3M40h_6YCJsI&callback=initialize"
 
    ></script>
@@ -49,6 +97,21 @@
    };
    // getLocation
    var latitude, longitude;
+   var coor = [
+     [36.627583, 127.436066],          //한국 장애인 고용단
+     [36.628279, 127.456582],          //한국장애인 자활사업장
+     [36.620944, 127.457928],          //한국신체장애인복지회 문화사업단
+     [36.604452, 127.463358],          //혜원 장애인 복지관
+     [36.614016, 127.473298],          //충북 장애인 자립 생활센터
+     [36.617825, 127.496639],          //청주함어울장애인자립생활센터
+     [36.639485, 127.439147],          //충북 장애인 심부름센터
+     [36.653781, 127.466136],          //충북 재활원
+     [36.656788, 127.478443],          // 청주시신장장애인주간보호센터
+     [36.663428, 127.480317],          //충북지적장애인복지협회 청주시지부
+     [36.663377, 127.466574],          //청주시장애인종합복지관
+     [36.664405, 127.464137],          //청주나누리푸드장애인보호작업장
+     [36.653831, 127.466324]          //충북 재활원
+   ];
    function locationSuccess(p){
        latitude = p.coords.latitude,
        longitude = p.coords.longitude;
@@ -73,18 +136,28 @@
    // geo_options
    var map;
    function initialize() {
+       var i;
+       var beachMarker = new Array();
        var myLatLng = new google.maps.LatLng(latitude, longitude);
        var mapOptions = {
-           zoom: 16,
+           zoom: 14,
            center: myLatLng
        };
        var image = './pin.png';
        map = new google.maps.Map(document.getElementById('map'), mapOptions);
-       var beachMarker = new google.maps.Marker({
-           position: myLatLng,
-           map: map,
-           icon: image
-       });
+
+       for(i = 0 ;i < coor.length;i++){
+          beachMarker[i] = new google.maps.Marker({
+             position: new google.maps.LatLng(coor[i][0], coor[i][1]),
+             map: map,
+             // icon: image
+         });
+       }
+       // var beachMarker = new google.maps.Marker({
+       //     position: myLatLng,
+       //     map: map,
+       //     icon: image
+       // });
        //html 문서안에 map-canvas 엘리먼트에 맵을 그리라고 하는 것임
    }
    </script>
