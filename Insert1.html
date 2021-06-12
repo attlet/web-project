@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>후원 신청서</title>
+
+    <script>
+      function pri(){
+        alert("제출완료");
+        window.close();
+      }
+      </script>
+
+  </head>
+  <body>
+    <h2 style="text-align:center">후원 신청서</h2>
+    <h3>후원자 정보</h3>
+    <form>
+      <label>이름:</label>
+      <input type="text"style="width:80%"><br>
+      <label>성별:</label>
+      남자<input type="checkbox">
+      여자<input type="checkbox"><br>
+      연락처:<input type="tel"style="width:80%"><br>
+      주소:<input type="text"style="width:80%"><br>
+      E-mail:<input type="email"style="width:80%"><br>
+      </form>
+      <h3>후원 내용</h3>
+      <form>
+        <label>후원 구분</label><br>
+        <label>(기간)</label><br>
+        정기후원<input type="checkbox">
+        일시후원<input type="checkbox"><br>
+        <label>(사용처)</label><br>
+        일반후원<input type="checkbox">
+        지정후원<input type="checkbox"><br>
+        <label>금액</label><br>
+        1만원<input type="checkbox">
+        3만원<input type="checkbox">
+        5만원<input type="checkbox">
+        10만원<input type="checkbox">
+        기타<input type="text"><br><br>
+        </form>
+        <p style="text-align:center">개인정보 및 고유식별정보 수집·이용 및 제 3자(결제기관) 제공에 동의합니다.</p>
+        <p style="text-align:center">동의후 제출<input type="checkbox" onclick="pri()">
+        비동의<input type="checkbox" ></p>
+  </body>
+</html>
