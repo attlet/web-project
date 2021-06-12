@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<div id="map" style="width:800px; height: 500px"></div>
+
+<script>
+function myMap() {
+  var mapCanvas = document.getElementById("map");
+  var myCenter = new google.maps.LatLng(36.66372449743092, 127.46654160000001);
+  var mapOptions = {
+  	center: myCenter,
+    zoom:13
+  };
+  var location1= new google.maps.LatLng(36.65678545930756, 127.47182713862578);
+  var location2= new google.maps.LatLng(36.671461333035666, 127.44631891860493);
+  var location3= new google.maps.LatLng(36.617609106789615, 127.47667242834719);
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+
+  var marker1 = new google.maps.Marker({
+	position:myCenter,
+
+  });
+  marker1.setMap(map);
+
+  var marker2 = new google.maps.Marker({
+	position:location1,
+
+  });
+marker2.setMap(map);
+  var marker3 = new google.maps.Marker({
+  position:location2,
+
+  });
+  marker3.setMap(map);
+
+  var marker4 = new google.maps.Marker({
+  position:location3,
+
+  });
+  marker4.setMap(map);
+
+  var infoWindow = new google.maps.InfoWindow({
+               content:
+                   "<h2>청주시 장애인 종합복지센터</h2>"
+                   + "<p>전화번호: 043-275-7411</p>"
+                   +"<p>주소: 충청북도 청주시 흥덕구 신봉동 500</p>"
+                   + "<a href='http://cjjb.kr/'>홈페이지 바로가기</a>"
+           });
+
+
+  marker1.addListener('click', function() {
+        infoWindow.open(map, marker1);
+           });
+
+ var infoWindow2 = new google.maps.InfoWindow({
+                        content:
+                            "<h2>청주시 종합 사회복지관</h2>"
+                            + "<p>전화번호: 043-275-7411</p>"
+                            +"<p>주소: 충청북도 청주시 흥덕구 신봉동 1순환로 392</p>"
+                            + "<a href='http://cjtsw.org/'>홈페이지 바로가기</a>"
+                    });
+
+
+  marker2.addListener('click', function() {
+        infoWindow2.open(map, marker2);
+                    });
+
+  var infoWindow3 = new google.maps.InfoWindow({
+                                      content:
+                                               "<h2>서부 종합 사회복지관</h2>"
+                                               + "<p>전화번호: 043-236-3600</p>"
+                                               +"<p>주소: 충청북도 청주시 흥덕구 복대2동 131-3</p>"
+                                               + "<a href='https://www.seubu.or.kr/xe/'>홈페이지 바로가기</a>"
+                                       });
+
+
+                     marker3.addListener('click', function() {
+                           infoWindow3.open(map, marker3);
+                                       });
+
+                                       var infoWindow4 = new google.maps.InfoWindow({
+                                                    content:
+                                                        "<h2>산남종합 사회복지관</h2>"
+                                                        + "<p>전화번호: 043-288-1428</p>"
+                                                        +"<p>주소: 충청북도 청주시 서원구 수곡동 구룡산로 290</p>"
+                                                        + "<a href='http://www.sannamswc.or.kr/'>홈페이지 바로가기</a>"
+                                                });
+
+
+                                       marker4.addListener('click', function() {
+                                             infoWindow4.open(map, marker4);
+                                                });
+
+
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAlOjojzJqN5CEy7iGWtTTiWgCMiPUhXI&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>
