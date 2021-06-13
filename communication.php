@@ -1,3 +1,4 @@
+<?php include $_SERVER['DOCUMENT_ROOT']."/db.php";?>
 
 <!DOCTYPE html>
 <html>
@@ -18,7 +19,7 @@
      width : 100%;
      height : 100%;
    }
-   a.btn{
+   a#write{
      display: inline-block;
      min-width: 80px;
      margin-left: 10px;
@@ -31,15 +32,14 @@
      decoration = none;
      text-align: center;
    }
-   a.btn:hover{
-     color : white;
+   a#write:hover{
+     decoration :
    }
-
 
 
    </style>
  </head>
- <body onload="load_table()">
+ <body>
    <div id="head">
      <nav class="navbar navbar-default">
        <div class="container">
@@ -63,8 +63,7 @@
      </nav>
 
    </div>
-   <a class="btn" href="communication_write.html">글 작성</a>
-   <a href="#" onclick="load_table(); "></a>
+   <a id="write" href="communication_write.html">글 작성</a>
    <table class="table table-hover table-striped text-center">
      <thead>
      <tr>
@@ -75,18 +74,29 @@
        <th>조회수</th>
      </tr>
      </thead>
+     <?php
+     // board테이블에서 idx를 기준으로 내림차순해서 10개까지 표시
+         $sql = query("select * from mytable order by idx desc limit 0,10");
+           while($mytable = $sql->fetch_array())
+           {
+             //title변수에 DB에서 가져온 title을 선택
+             $title=$mytable["title"];
+             if(strlen($title)>30)
+             {
+               //title이 30을 넘어서면 ...표시
+               $title=str_replace($mytable["title"],mb_substr($mytable["title"],0,30,"utf-8")."...",$mytable["title"]);
+             }
+      ?>
      <tbody id="table_body">
        <tr>
-         <td>165</td>
-         <td>물건팝니a</td>
-         <td>길라임</td>
-         <td>날자</td>
-         <td>2</td>
+         <td><?php echo $mytable['num']; ?></td>
+         <td><?php echo $mytable['title']; ?></td>
+         <td><?php echo $mytable['id']; ?></td>
+         <td><?php echo $mytable['date']; ?></td>
+         <td><?php echo $mytable['access']; ?></td>
        </tr>
      </tbody>
    </table>
-
-
 
 
  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -95,22 +105,4 @@
 
 
  </body>
- <script>
-  function load_table(){
-    var my_body = document.getElementById('table_body');
-    var row = my_body.insertRow(my_body.rows.length);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    var cell4 = row.insertCell(3);
-    cell1.innerHTML = localStorage.getItem('title');
-    cell2.innerHTML = localStorage.getItem('writer');
-    cell3.innerHTML = "hem";
-    cell4.innerHTML = "heell";
-  }
- function disappear(){
-
- }
-
- </script>
 </html>

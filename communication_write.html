@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>My webpage</title>
+     <link rel="stylesheet" href="css/css.css">
+
+ </head>
+ <body>
+   <div class="board_wrap">
+       <div class="board_title">
+           <strong>글 작성</strong>
+       </div>
+       <div class="board_write_wrap">
+           <div class="board_write">
+               <div class="title">
+                   <dl>
+                       <dt>제목</dt>
+                       <dd><input type="text" id="Subject" placeholder="제목 입력"></dd>
+                   </dl>
+               </div>
+               <div class="info">
+                   <dl>
+                       <dt>글쓴이</dt>
+                       <dd><input type="text" id="Writer" placeholder="글쓴이 입력"></dd>
+                   </dl>
+                   <dl>
+                       <dt>비밀번호</dt>
+                       <dd><input type="password" id="Password" placeholder="비밀번호 입력"></dd>
+                   </dl>
+               </div>
+               <div class="cont">
+                   <textarea placeholder="내용 입력" id="Content"></textarea>
+               </div>
+           </div>
+           <div class="bt_wrap">
+               <a href="communication.html" class="on" onclick="regist();">등록</a>
+               <a href="communication.html">취소</a>
+           </div>
+       </div>
+   </div>
+
+
+ </body>
+ <script>
+
+ var subject , writer, password, content; //등록 누르면 저장할 변수
+ var now = new Date();
+ var year = now.getFullYear();
+ var month = now.getMonth();
+ var date = now.getDate();
+ function regist(){
+   subject = document.getElementById("Subject").value;
+   writer = document.getElementById("Writer").value;
+   password = document.getElementById("Password").value;
+   content = document.getElementById("Content").value;
+
+   localStorage.setItem('title', subject);
+   localStorage.setItem('writer', writer);
+   localStorage.setItem('num', );
+ }
+
+ </script>
+</html>
