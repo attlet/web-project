@@ -10,6 +10,26 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
    <link type="text/css" rel="stylesheet" href="shared_design.css">
+   <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js">
+   </script>
+   <script type = "text/javascript">
+      google.charts.load('current', {packages: ['corechart']});
+   </script>
+
+   <script>
+   function Insert1(){
+    window.open("Insert1.html","test","width=700, height=500, top=10, left=10");
+   }
+
+   function Insert2(){
+    window.open("Insert2.html","test","width=700, height=500, top=10, left=10");
+  }
+
+  function openmap(){
+     window.open("map_gibu.html","test","width=700, height=500, top=10, left=10");
+  }
+   </script>
+
    <style>
    body{
      width : 100%;
@@ -30,6 +50,19 @@
              font-size: 15px;
              letter-spacing: 5px;
          }
+
+         #foot{
+             background-color: gray;
+
+             height : 150px;
+             text-align: center;
+             padding-top : 40px;
+           }
+           #foot img{
+             width : 25px;
+             height : 25px;
+
+           }
 
    </style>
  </head>
@@ -120,14 +153,152 @@
    var num, subject, writer, date, access;
  </script>
 
- <div style="text-align:center">
-   <h3>후원금 후원 안내<h3>
-     <p>1.신청서 작성후 제출: <button type="button">신청서작성</button></p>
+ <div id = "container" style = "width: 550px; height: 400px; margin: 0 auto; float:left;">
+
+ </div>
+ <script language = "JavaScript">
+    function drawChart() {
+       // Define the chart to be drawn.
+       var data = new google.visualization.DataTable();
+       data.addColumn('string', 'Browser');
+       data.addColumn('number', 'Percentage');
+       data.addRows([
+          ['기금', 59.6],
+          ['보조금', 12.0],
+          ['기부', 28.4]
+
+       ]);
+
+       // Set chart options
+       var options = {
+          'title':'한국 장애인 재단 기부현황, 2020',
+          'width':550,
+          'height':400
+       };
+
+       // Instantiate and draw the chart.
+       var chart = new google.visualization.PieChart(document.getElementById('container'));
+       chart.draw(data, options);
+    }
+    google.charts.setOnLoadCallback(drawChart);
+ </script>
+<div style="float:left">
+  <table border="1" style="margin-top:70px">
+    <tr>
+    <th colspan="3" style="text-align:center">2020 기금ㆍ기부현황</th>
+  </tr>
+  <tr>
+    <th>기금</th>
+    <td>신한카드기금</td>
+    <td>1000000000</td>
+  </tr>
+<tr>
+  <th rowspan="2">보조금</th>
+  <td> 사회복지공동모금회<br>(SK이노베이션)</td>
+  <td rowspan="2">180,000,000</td>
+</tr>
+<tr>
+  <td>사회복지공동모금회<br>(전국전세버스
+운송사업조합연합회)</td>
+</tr>
+<tr>
+  <th rowspan="4">기부금</th>
+  <td>개인기부(현금)</td>
+  <td>96,401,073</td>
+</tr>
+<tr>
+  <td>개인기부(현물)</td>
+  <td style="text-align:center">-</td>
+</tr>
+<tr>
+  <td>기업기부(현금)</td>
+  <td>301,811,929</td>
+</tr>
+<tr>
+<td>기업기부(현물)</td>
+<td>78,494,275</td>
+</tr>
+<tr>
+  <td colspan="2" style="text-align:center">총계</td>
+  <td>1,677,232,099</td>
+</tr>
+  </table>
+</div>
+
+<div >
+  <table border="1" style="margin-top:70px; margin-left:1000px;">
+    <tr>
+      <th colspan="4">4월 총 기부금 : 115,034,702원</th>
+    </tr>
+    <tr>
+      <td  rowspan="2">개인기부</td>
+      <td>정기기부</td>
+      <td>강다연외 명</td>
+      <td>6,057,300원</td>
+    </tr>
+    <tr>
+      <td>일시기부</td>
+      <td>김현배외 명</td>
+      <td>5,832,738원</td>
+    </tr>
+    <tr>
+      <td rowspan="2">기업기부</td>
+      <td>정기기부</td>
+      <td>대우인쇄교역 외 곳</td>
+      <td>500,000원</td>
+    </tr>
+    <tr>
+      <td>일시기부</td>
+      <td>삼성화재애니카손사 외</td>
+      <td>102,420,000원</td>
+    </tr>
+    <tr>
+      <td rowspan="5">특별기부</td>
+      <td colspan="2">SK증권CMA</td>
+      <td>89,216원</td>
+    </tr>
+    <tr>
+      <td colspan="2">신한카드 아름인</td>
+      <td>5,541원</td>
+    </tr>
+    <tr>
+      <td colspan="2">농협카드(올바른GIVE카드, 포인트)</td>
+      <td>87,907원</td>
+    </tr>
+    <tr>
+      <td colspan="2">해피빈</td>
+      <td>30,000원</td>
+    </tr>
+    <tr>
+      <td colspan="2">ARS(060-700-0420)</td>
+      <td>12,000원</td>
+    </tr>
+  </table>
+</div>
+
+
+ <div style="margin-left:400px; clear:both;">
+   <h3>-후원금 후원 및 물품 후원안내</h3>
+     <p>1.후원금 신청서 작성후 제출: <button type="button" onclick="Insert1()">신청서작성</button></p>
      <p>2.직접 방문후 제출</p><br>
-  <h3>물품 후원 안내<h3>
-    <p>1.신청서 작성후 제출: <button type="button">신청서작성</button></p>
+    <p>1.후원물품 신청서 작성후 제출: <button type="button" onclick="Insert2()">신청서작성</button></p>
     <p>2.직접 방문후 제출</p><br>
-  <h3>저금통 후원 안내<h3>
-    <p>1.직접 방문후 제출</p><br>
+  <h3>-저금통 후원 안내</h3>
+    <p>1.직접 방문후 제출</p>
+    <p>복지관 위치 안내-> <input type="button" value="위치" id="mapgibu" onclick="openmap()"> </p><br>
+    <h3>장기 후원자 혜택</h3>
+    <p>1.분기별로 발행되는 복지관 소식지를 받을 수 있습니다.<br>
+2.소득세법 제 34조, 법인세법 제18조에 의한 지정기부금 규정에 의거하여 소득공제 혜택을 받을 수 있습니다.</p>
+  <h3>후원 문의</h3>
+  <p>후원문의 : 02-6399-6237<br>이메일 : herbnanum@herbnanum.org<br>업무시간 : 월~금 09:00~18:00<br></p>
+</div>
+  <div id="foot">
+      <p>제작자: 고승현 구교성 신윤성</p>
+      <p>주소 : 청주시  &nbsp&nbsp&nbsp 연락처: 010-1111-2222</p>
+      <img src="페이스북.png">
+      <img src="인스타그램.png" alt="">
+    </div>
+
+
  </body>
 </html>
